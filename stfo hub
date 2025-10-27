@@ -1,0 +1,192 @@
+local lol = 1
+local lol1 = 1
+local lol2 = 1
+local carpettrack
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+gui.ResetOnSpawn = false
+local frame = Instance.new("Frame", gui)
+local frame1 = Instance.new("Frame", frame)
+local text1 = Instance.new("TextLabel", frame1)
+local text2 = Instance.new("TextLabel", frame1)
+local button = Instance.new("TextButton", frame)
+local button1 = Instance.new("TextButton", frame)
+local button2 = Instance.new("TextButton", frame)
+local text = Instance.new("TextLabel", frame)
+local credit = Instance.new("TextButton", frame)
+
+text.Size = UDim2.new(1,0,0.5,0)
+text.Position = UDim2.new(0.5,-183,0.5,-84)
+text.BackgroundColor3 = Color3.fromRGB(0,255,0)
+text.Draggable = false
+text.Active = false
+text.TextSize = 25
+text.BackgroundTransparency = 1
+text.TextColor3 = Color3.fromRGB(0,170,0)
+text.Text = "STFO FUCKER 5000"
+
+frame.Size = UDim2.new(0.4,0,0.4,0)
+frame.Position = UDim2.new(0.5,85,0.5,-226)
+frame.BackgroundColor3 = Color3.fromRGB(255,30,0)
+frame.Draggable = true
+frame.Active = true
+frame.BorderSizePixel = 0
+
+frame1.Size = UDim2.new(1,0,0.5,0)
+frame1.Position = UDim2.new(0.5,-183,0.5,71)
+frame1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+frame1.Draggable = false
+frame1.Active = true
+frame1.BorderSizePixel = 0
+frame1.Visible = false
+
+text1.Size = UDim2.new(0.4,0,0.4,0)
+text1.Position = UDim2.new(0.8,-183,0.5,-36)
+text1.BackgroundColor3 = Color3.fromRGB(255,30,0)
+text1.Draggable = false
+text1.Active = false
+text1.BackgroundTransparency = 1
+text1.TextSize = 20
+text1.TextColor3 = Color3.fromRGB(211,141,0)
+text1.Text = "MADE BY HAXAREBEST1"
+
+text2.Size = UDim2.new(0.4,0,0.4,0)
+text2.Position = UDim2.new(0.8,-181,0.5,0)
+text2.BackgroundColor3 = Color3.fromRGB(255,30,0)
+text2.Draggable = false
+text2.Active = false
+text2.BackgroundTransparency = 1
+text2.TextSize = 18
+text2.TextColor3 = Color3.fromRGB(255,0,0)
+text2.Text = "AND CHATGPT"
+
+button.Size = UDim2.new(0.25,0,0.2,0)
+button.Position = UDim2.new(0.4,-129,0.5,-11)
+button.Active = true
+button.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button.Draggable = false
+button.Text = "tp kill OP(off)"
+
+button1.Size = UDim2.new(0.25,0,0.2,0)
+button1.Position = UDim2.new(0.6,-86,0.5,-11)
+button1.Active = true
+button1.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button1.Draggable = false
+button1.Text = "sword dick"
+
+button2.Size = UDim2.new(0.25,0,0.2,0)
+button2.Position = UDim2.new(0.6,30,0.5,-11)
+button2.Active = true
+button2.BackgroundColor3 = Color3.fromRGB(0,255,255)
+button2.Draggable = false
+button2.Text = "carpet (harder to hit)(off)"
+
+credit.Size = UDim2.new(0.7,0,0.2,0)
+credit.Position = UDim2.new(0.6,-165,0.5,41)
+credit.Active = true
+credit.BackgroundColor3 = Color3.fromRGB(255,255,255)
+credit.Draggable = false
+credit.Text = "CREDITS"
+
+local function runLoop()
+	while task.wait() do
+		if lol == 0 then
+			local character = player.Character or player.CharacterAdded:Wait()
+			local humanoidroot = character:FindFirstChild("HumanoidRootPart")
+			if not humanoidroot then continue end
+			local nearestPlayer = nil
+			local shortestDistance = math.huge
+			for _, otherPlayer in ipairs(game.Players:GetPlayers()) do
+				if otherPlayer ~= player and otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart") then
+					local otherHRP = otherPlayer.Character.HumanoidRootPart
+					local distance = (otherHRP.Position - humanoidroot.Position).Magnitude
+					if distance < shortestDistance then
+						shortestDistance = distance
+						nearestPlayer = otherPlayer
+					end
+				end
+			end
+			if nearestPlayer and shortestDistance <= 13 then
+				local targetHRP = nearestPlayer.Character.HumanoidRootPart
+				local behindCFrame = targetHRP.CFrame * CFrame.new(0, 0, 5)
+				humanoidroot.CFrame = behindCFrame
+				print("Teleported behind: " .. nearestPlayer.Name)
+			end
+		end
+	end
+end
+
+local function runScript()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "BEST STFO SCRIPT";
+		Text = "Made by Haxarebest1";
+		Duration = 5
+	})
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "BEST STFO SCRIPT";
+		Text = "and ChatGPT";
+		Duration = 5
+	})
+	task.spawn(runLoop)
+end
+
+credit.MouseButton1Click:Connect(function()
+	frame1.Visible = not frame1.Visible
+end)
+
+button.MouseButton1Click:Connect(function()
+	if lol == 1 then
+		lol = 0
+		button.Text = "tp kill OP(on)"
+	else
+		lol = 1
+		button.Text = "tp kill OP(off)"
+	end
+end)
+
+player.CharacterAdded:Connect(function()
+	task.wait()
+end)
+
+runScript()
+
+button1.MouseButton1Click:Connect(function()
+local sword = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Sword") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("ClassicSword") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Classic Sword") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("ChristmasSword") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Foil") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Linked Sword") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Black Sword") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Thunder Sword") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Classic") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Sharpened") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Medical") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Linked") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Default") or
+game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("ClassicSwordV2")
+if sword then
+    sword.Grip = CFrame.new(2, 1.25, 0, 0.0995037332, 0.995037258, 0, 0.995037258, -0.0995035842, 0, 0, 0, -1)
+else
+    warn("Sword not found in Backpack!")
+end
+end)
+
+button2.MouseButton1Click:Connect(function()
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+
+	if lol2 == 1 then
+		local anim = Instance.new("Animation")
+		anim.AnimationId = "rbxassetid://282574440"
+		carpettrack = humanoid:LoadAnimation(anim)
+		carpettrack:Play()
+		button2.Text = "carpet(on)"
+		lol2 = 0
+	else
+		if carpettrack then
+			carpettrack:Stop()
+		end
+		button2.Text = "carpet(off)"
+		lol2 = 1
+	end
+end)
