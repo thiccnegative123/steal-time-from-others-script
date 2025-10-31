@@ -109,7 +109,7 @@ button5.Position = UDim2.new(0.6,30,0.5,-11)
 button5.Active = true
 button5.BackgroundColor3 = Color3.fromRGB(0,255,255)
 button5.Draggable = false
-button5.Text = "flick"
+button5.Text = "invisible"
 button5.Visible = false
 
 credit.Size = UDim2.new(0.7,0,0.2,0)
@@ -260,6 +260,17 @@ end
 end)
 
 button5.MouseButton1Click:Connect(function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
+end)
+
+next.MouseButton1Click:Connect(function()
+	button.Visible = false
+	button1.Visible = false
+	button2.Visible = false
+	button3.Visible = true
+	button4.Visible = true
+	button5.Visible = true
+	next.Visible = false
+	back.Visible = true
 end)
 
 back.MouseButton1Click:Connect(function()
