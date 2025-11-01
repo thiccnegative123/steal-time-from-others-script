@@ -55,7 +55,7 @@ text1.Active = false
 text1.BackgroundTransparency = 1
 text1.TextSize = 20
 text1.TextColor3 = Color3.fromRGB(211,141,0)
-text1.Text = "MADE BY HAXAREBEST1"
+text1.Text = "MADE BY HAXAREBEST2"
 
 text2.Size = UDim2.new(0.4,0,0.4,0)
 text2.Position = UDim2.new(0.8,-181,0.5,0)
