@@ -159,7 +159,7 @@ local function runLoop()
 			end
 			if nearestPlayer and shortestDistance <= 15 then
 				local targetHRP = nearestPlayer.Character.HumanoidRootPart
-				local behindCFrame = targetHRP.CFrame * CFrame.new(0, 0, 6)
+				local behindCFrame = targetHRP.CFrame * CFrame.new(0, 0, 10)
 				humanoidroot.CFrame = behindCFrame
 				print("Teleported behind: " .. nearestPlayer.Name)
 			end
